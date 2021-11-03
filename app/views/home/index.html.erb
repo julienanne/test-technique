@@ -1,0 +1,11 @@
+<h1>Liste des commerçants</h1>
+
+<% if @shops.any? %>
+  <ul>
+    <% @shops.each do |shop| %>
+      <li><%= shop.name %></li>  
+    <% end %>  
+  </ul>
+<% else %>
+  <p>Pas encore de commerçants sur la plateforme, ils arrivent prochainement ;)</p>
+<% end %>
