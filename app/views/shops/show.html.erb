@@ -1,2 +1,18 @@
-<h1>Shops#show</h1>
-<p>Find me in app/views/shops/show.html.erb</p>
+<h1><%= @shop.name %></h1>
+
+<% if @taxons_products.any? %>
+  <ul>
+    <% @taxons_products.each do |taxon, products| %>
+      <li>
+        <p><%= taxon.name %></p>
+        <ul>
+          <% products.each do |product| %>
+            <li><%= product.name %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Aucun produit pour le moment.</p>
+<% end %>
